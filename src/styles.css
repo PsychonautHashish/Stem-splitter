@@ -1,0 +1,136 @@
+/* styles.css */
+
+:root {
+    --primary-color: rgba(255, 255, 255, 0.95);
+    --background-gradient: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+    --glass-background: rgba(255, 255, 255, 0.15);
+    --glass-border: rgba(255, 255, 255, 0.2);
+    --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+  }
+  
+  body {
+    margin: 0;
+    min-height: 100vh;
+    background: var(--background-gradient);
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--primary-color);
+  }
+  
+  .app-container {
+    width: 90%;
+    max-width: 800px;
+    margin: 2rem;
+    padding: 2.5rem;
+    background: var(--glass-background);
+    backdrop-filter: blur(12px);
+    border-radius: 20px;
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
+  }
+  
+  .upload-container {
+    position: relative;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+  
+  .file-input {
+    opacity: 0;
+    position: absolute;
+    z-index: -1;
+  }
+  
+  .file-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 1.2rem 2.5rem;
+    background: var(--glass-background);
+    backdrop-filter: blur(5px);
+    border-radius: 12px;
+    border: 1px solid var(--glass-border);
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .file-label:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: translateY(-2px);
+  }
+  
+  .upload-icon {
+    width: 24px;
+    height: 24px;
+    filter: invert(1);
+  }
+  
+  .audio-container {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background: var(--glass-background);
+    backdrop-filter: blur(8px);
+    border-radius: 16px;
+    border: 1px solid var(--glass-border);
+  }
+  
+  .audio-player {
+    width: 100%;
+    margin: 1rem 0;
+  }
+  
+  .audio-player::-webkit-media-controls-panel {
+    background: var(--glass-background);
+    backdrop-filter: blur(5px);
+    border-radius: 12px;
+  }
+  
+  .loading-text {
+    text-align: center;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+  }
+  
+  .download-link {
+    display: inline-block;
+    margin-top: 1rem;
+    padding: 0.8rem 1.5rem;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    text-decoration: none;
+    color: var(--primary-color);
+    transition: all 0.3s ease;
+  }
+  
+  .download-link:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateY(-1px);
+  }
+  
+  @keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+  }
+  
+  .loading-dot {
+    animation: pulse 1.5s infinite;
+    margin: 0 0.2rem;
+  }
+  
+  @media (max-width: 768px) {
+    .app-container {
+      width: 95%;
+      padding: 1.5rem;
+    }
+    
+    .file-label {
+      width: 100%;
+      justify-content: center;
+    }
+  }
